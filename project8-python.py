@@ -2,11 +2,6 @@ import psycopg2
 from datetime import date, datetime, time
 conn = psycopg2.connect(database = "project8-db", user = "postgres", host= 'localhost', password = "8600", port = 5432)
 
-#Items to Order
-# 2 - Miso Soup
-# 1 - Kani Salad
-# 2 - Gyudon
-# 1 - Shoyu Ramen
 
 # Open a cursor to perform database operations
 cur = conn.cursor()
@@ -43,7 +38,7 @@ print("Welcome to Irasshaimase! Which Branch will you be delivering from today?"
 branch_detail = input("Branch Name: Ortigas, Shangri-La, or Katipunan ")
 while True:
 	if branch_detail not in branch:
-		print('ITM Kitchen does not delivery to your area. Kindly contact any branch for further assistance.')
+		print('Irasshaimase does not delivery to your area. Kindly contact any branch for further assistance.')
 		print("Welcome to Irasshaimase! Which Branch will you be delivering from today?")
 		branch_detail = input("Branch Name: Ortigas, Shangri-La, or Katipunan ")
 	else: 
@@ -131,7 +126,7 @@ while True:
 							print(f"{p} - {receipt[p]} - {receipt[p] * menu[p]} pesos")
 					print(f'''
 
-					Thank you very much for ordering from IT Kitchen, 
+					Thank you very much for ordering from Irasshaimase, 
 					please expect a call or message from your chosen branch to process the order payment.
 
 
